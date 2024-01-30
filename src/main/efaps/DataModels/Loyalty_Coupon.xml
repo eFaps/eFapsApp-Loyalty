@@ -17,13 +17,15 @@
 
 -->
 
-<common-systemconfiguration xmlns="http://www.efaps.org/xsd"
+
+<datamodel-type xmlns="http://www.efaps.org/xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
-    <uuid>4eeea69b-d6c7-47ed-b032-864e992ec215</uuid>
+    <uuid>6af81956-c77d-4fb2-89af-3cfef167de67</uuid>
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty-Configuration</name>
+        <name>Loyalty_Coupon</name>
+        <parent>Loyalty_AccountAbstract</parent>
     </definition>
-</common-systemconfiguration>
+</datamodel-type>
