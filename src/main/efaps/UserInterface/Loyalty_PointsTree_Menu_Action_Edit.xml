@@ -16,22 +16,17 @@
 
 -->
 <ui-command xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
-    <uuid>53c2009b-a3a9-4536-a6d6-8296a0846605</uuid>
+    xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
+    <uuid>40910a8b-03ef-49ff-9114-2e1bf398754c</uuid>
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty_ProgramMyDesk_Menu_Action_CreatePoints</name>
+        <name>Loyalty_PointsTree_Menu_Action_Edit</name>
         <target>
             <form>Loyalty_PointsForm</form>
-            <execute program="org.efaps.esjp.common.uiform.Create">
-                <property name="StatusGroup">Loyalty_ProgramStatus</property>
-                <property name="Status">Active</property>
-            </execute>
+            <execute program="org.efaps.esjp.common.uiform.Edit"/>
         </target>
         <property name="Target">modal</property>
-        <property name="TargetCreateType">Loyalty_Points</property>
-        <property name="TargetMode">create</property>
-        <property name="TargetDefaultMenu">none</property>
+        <property name="TargetMode">edit</property>
     </definition>
 </ui-command>

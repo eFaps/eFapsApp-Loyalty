@@ -26,7 +26,13 @@
             <property name="Select">type.label</property>
             <property name="Label">Loyalty_ProgramAbstract/Type.Label</property>
             <property name="UIProvider">org.efaps.admin.datamodel.ui.StringUI</property>
-            <property name="HRef">TREE</property>
+            <property name="HRef">TREEMENU</property>
+        </field>
+        <field name="contactLink">
+            <property name="SelectAlternateOID">linkto[ContactLink].oid</property>
+            <property name="Select">linkto[ContactLink].attribute[Name]</property>
+            <property name="Label">Loyalty_ProgramAbstract/ContactLink.Label</property>
+            <property name="HRef">TREEMENU</property>
         </field>
         <field name="creator">
             <property name="Select">attribute[Creator]</property>
