@@ -18,9 +18,6 @@ package org.efaps.esjp.loyalty.utils;
 import java.util.UUID;
 
 import org.efaps.admin.common.SystemConfiguration;
-import org.efaps.admin.datamodel.IBitEnum;
-import org.efaps.admin.datamodel.IEnum;
-import org.efaps.admin.datamodel.attributetype.BitEnumType;
 import org.efaps.admin.program.esjp.EFapsApplication;
 import org.efaps.admin.program.esjp.EFapsUUID;
 import org.efaps.api.annotation.EFapsSysConfAttribute;
@@ -44,48 +41,6 @@ public class Loyalty
                     .sysConfUUID(Loyalty.SYSCONFUUID)
                     .key(Loyalty.BASE + "Activate")
                     .description("Activate Loyalty.");
-
-    public enum ConditionContainer implements IEnum
-    {
-
-        SOURCE, TARGET;
-
-        @Override
-        public int getInt()
-        {
-            return ordinal();
-        }
-    }
-
-    public enum EntryOperator implements IEnum
-    {
-
-        INCLUDES_ANY, INCLUDES_ALL, EXCLUDES;
-
-        @Override
-        public int getInt()
-        {
-            return ordinal();
-        }
-    }
-
-    public enum Weekday implements IBitEnum
-    {
-
-        MONDAY, TUESDAY, WDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
-
-        @Override
-        public int getInt()
-        {
-            return BitEnumType.getInt4Index(ordinal());
-        }
-
-        @Override
-        public int getBitIndex()
-        {
-            return ordinal();
-        }
-    }
 
     public static SystemConfiguration getSysConfig()
         throws CacheReloadException

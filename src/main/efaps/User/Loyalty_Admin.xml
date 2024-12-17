@@ -15,22 +15,14 @@
     limitations under the License.
 
 -->
-<ui-menu xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<user-role xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
-    <uuid>476037b2-a2ae-4a5f-a5ed-480c29e4cb13</uuid>
+    <uuid>df7f499d-efa5-42b3-9268-e3389163e626</uuid>
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty_MyDesk</name>
-        <target>
-            <trigger event="UI_ACCESSCHECK" method="configCheck" name="Loyalty_MyDesk.UI_ACCESSCHECK"
-                program="org.efaps.esjp.admin.access.AccessCheck4UI">
-                <property name="SystemConfig">4eeea69b-d6c7-47ed-b032-864e992ec215</property>
-                <property name="Attribute">org.efaps.loyalty.Activate</property>
-            </trigger>
-        </target>
-        <childs>
-            <child>Loyalty_AccountMyDesk</child>
-        </childs>
+        <name>Loyalty_Admin</name>
+        <status>true</status>
+        <global>true</global>
     </definition>
-</ui-menu>
+</user-role>
