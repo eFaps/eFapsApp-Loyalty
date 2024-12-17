@@ -15,23 +15,15 @@
     limitations under the License.
 
 -->
-<datamodel-type xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<ui-menu xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
-    <uuid>543aa616-bbc7-4454-a6e2-6b6c00fd859b</uuid>
+    <uuid>88eafa19-53c2-4948-a0b2-b985a8edf033</uuid>
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty_Points</name>
-        <parent>Loyalty_ProgramAbstract</parent>
-        <attribute>
-            <name>Status</name>
-            <type>Status</type>
-            <typelink>Loyalty_ProgramStatus</typelink>
-            <sqltable>Loyalty_ProgramSQLTable</sqltable>
-            <sqlcolumn>STATUS</sqlcolumn>
-            <trigger event="RANGE_VALUE" name="Loyalty_Points.Status.RANGE_VALUE"
-                program="org.efaps.esjp.admin.datamodel.StatusValue">
-            </trigger>
-        </attribute>
+        <name>Loyalty_ProgramMyDesk_Menu</name>
+        <childs>
+            <child>Loyalty_ProgramMyDesk_Menu_Action</child>
+        </childs>
     </definition>
-</datamodel-type>
+</ui-menu>

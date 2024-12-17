@@ -51,6 +51,16 @@
             <sqlcolumn>ASSOCID</sqlcolumn>
         </attribute>
          <attribute>
+            <name>StatusAbstract</name>
+            <type>Status</type>
+            <typelink>Loyalty_ProgramStatus</typelink>
+            <sqltable>Loyalty_ProgramSQLTable</sqltable>
+            <sqlcolumn>STATUS</sqlcolumn>
+            <trigger event="RANGE_VALUE" name="Loyalty_Program.Status.RANGE_VALUE"
+                program="org.efaps.esjp.admin.datamodel.StatusValue">
+            </trigger>
+        </attribute>
+         <attribute>
             <name>ContactLink</name>
             <type>Link</type>
             <typelink>Contacts_Contact</typelink>

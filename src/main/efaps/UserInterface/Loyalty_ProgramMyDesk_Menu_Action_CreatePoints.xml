@@ -14,25 +14,22 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 
--->
-<ui-command xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
-    <uuid>62ef3be6-da2b-4775-b2b7-ffebd21f7436</uuid>
+--><ui-command xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
+    <uuid>53c2009b-a3a9-4536-a6d6-8296a0846605</uuid>
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty_ProgramMyDesk</name>
-        <access>
-            <role>Loyalty_Admin</role>
-        </access>
+        <name>Loyalty_ProgramMyDesk_Menu_Action_CreatePoints</name>
         <target>
-            <menu>Loyalty_ProgramMyDesk_Menu</menu>
-            <table>Loyalty_ProgramTable</table>
-            <evaluate program="org.efaps.esjp.common.uitable.MultiPrint">
-                <property name="Type">Loyalty_ProgramAbstract</property>
-            </evaluate>
+            <form>Loyalty_PointsForm</form>
+            <execute program="org.efaps.esjp.common.uiform.Create">
+                <property name="StatusGroup">Loyalty_Points</property>
+                <property name="Status">Inactive</property>
+            </execute>
         </target>
-        <property name="Target">content</property>
-        <property name="TargetShowCheckBoxes">true</property>
+        <property name="Target">modal</property>
+        <property name="TargetCreateType">Loyalty_Points</property>
+        <property name="TargetMode">create</property>
+        <property name="TargetDefaultMenu">none</property>
     </definition>
 </ui-command>

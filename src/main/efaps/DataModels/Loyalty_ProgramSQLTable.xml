@@ -29,6 +29,7 @@
             <table-name>T_LOYPROGRAM</table-name>
             <column name="TYPEID"       not-null="true" type="INTEGER"/>
             <column name="ASSOCID"      not-null="true" type="INTEGER"/>
+            <column name="STATUS"       not-null="true" type="INTEGER" />
             <column name="CONTACTID"                    type="INTEGER"/>
             <column name="CREATOR"      not-null="true" type="INTEGER"/>
             <column name="CREATED"      not-null="true" type="DATETIME"/>
