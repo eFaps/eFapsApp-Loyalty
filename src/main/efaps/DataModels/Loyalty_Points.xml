@@ -15,26 +15,13 @@
     limitations under the License.
 
 -->
-<ui-table xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<datamodel-type xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
-    <uuid>3c7d69e6-e267-4d76-a905-c01f5c4c86f2</uuid>
+    <uuid>543aa616-bbc7-4454-a6e2-6b6c00fd859b</uuid>
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty_AccountTable</name>
-        <field name="type">
-            <property name="Select">type.label</property>
-            <property name="Label">Loyalty_AccountAbstract/Type.Label</property>
-            <property name="UIProvider">org.efaps.admin.datamodel.ui.StringUI</property>
-            <property name="HRef">TREE</property>
-        </field>
-        <field name="creator">
-            <property name="Select">attribute[Creator]</property>
-            <property name="Label">Loyalty_AccountAbstract/Creator.Label</property>
-        </field>
-        <field name="created">
-            <property name="Select">attribute[Created]</property>
-            <property name="Label">Loyalty_AccountAbstract/Created.Label</property>
-        </field>
+        <name>Loyalty_Points</name>
+        <parent>Loyalty_ProgramAbstract</parent>
     </definition>
-</ui-table>
+</datamodel-type>

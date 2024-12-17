@@ -26,6 +26,6 @@
     <definition>
         <version-expression>(version==latest)</version-expression>
         <name>Loyalty_Coupon</name>
-        <parent>Loyalty_AccountAbstract</parent>
+        <parent>Loyalty_ProgramAbstract</parent>
     </definition>
 </datamodel-type>

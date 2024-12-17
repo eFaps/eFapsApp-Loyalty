@@ -17,26 +17,26 @@
 
 -->
 
-<datamodel-sqltable xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<datamodel-sqltable xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
     <uuid>7d56daa6-9f4d-4b77-a0cd-5f88435bff33</uuid>
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty_AccountSQLTable</name>
+        <name>Loyalty_ProgramSQLTable</name>
         <typeid-column>TYPEID</typeid-column>
         <database>
-            <table-name>T_LOYACCOUNT</table-name>
+            <table-name>T_LOYPROGRAM</table-name>
             <column name="TYPEID"       not-null="true" type="INTEGER"/>
             <column name="ASSOCID"      not-null="true" type="INTEGER"/>
-            <column name="CONTACTID"    not-null="true" type="INTEGER"/>
+            <column name="CONTACTID"                    type="INTEGER"/>
             <column name="CREATOR"      not-null="true" type="INTEGER"/>
             <column name="CREATED"      not-null="true" type="DATETIME"/>
             <column name="MODIFIER"     not-null="true" type="INTEGER"/>
             <column name="MODIFIED"     not-null="true" type="DATETIME"/>
-            <foreign key="ASSOCID"  name="T_LOYACCOUNT_FK_ASSOCID"  reference="T_CMASSOC(ID)"/>
-            <foreign key="CREATOR"  name="T_LOYACCOUNT_FK_CRTR"     reference="T_USERPERSON(ID)"/>
-            <foreign key="MODIFIER" name="T_LOYACCOUNT_FK_MDFR"     reference="T_USERPERSON(ID)"/>
+            <foreign key="ASSOCID"  name="T_LOYPROGRAM_FK_ASSOCID"  reference="T_CMASSOC(ID)"/>
+            <foreign key="CREATOR"  name="T_LOYPROGRAM_FK_CRTR"     reference="T_USERPERSON(ID)"/>
+            <foreign key="MODIFIER" name="T_LOYPROGRAM_FK_MDFR"     reference="T_USERPERSON(ID)"/>
         </database>
     </definition>
 </datamodel-sqltable>

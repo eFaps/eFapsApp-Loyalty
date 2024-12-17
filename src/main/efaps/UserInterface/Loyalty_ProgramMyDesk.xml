@@ -21,14 +21,14 @@
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty_AccountMyDesk</name>
+        <name>Loyalty_ProgramMyDesk</name>
         <access>
             <role>Loyalty_Admin</role>
         </access>
         <target>
-            <table>Loyalty_AccountTable</table>
+            <table>Loyalty_ProgramTable</table>
             <evaluate program="org.efaps.esjp.common.uitable.MultiPrint">
-                <property name="Type">Loyalty_AccountAbstract</property>
+                <property name="Type">Loyalty_ProgramAbstract</property>
             </evaluate>
         </target>
         <property name="Target">content</property>
