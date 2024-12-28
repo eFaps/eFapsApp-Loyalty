@@ -34,6 +34,10 @@
             <property name="Attribute">Code</property>
             <property name="Label">Loyalty_PaymentPoints/Code.Label</property>
         </field>
+        <field name="pointsTypeLink">
+            <property name="Select">linkto[PointsTypeLink].attribute[Value]</property>
+            <property name="Label">Loyalty_PaymentPoints/PointsTypeLink.Label</property>
+        </field>
         <field name="amount">
             <property name="Attribute">Amount</property>
             <property name="Label">Loyalty_PaymentPoints/Amount.Label</property>

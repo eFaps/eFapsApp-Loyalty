@@ -25,6 +25,12 @@
         <target>
             <form>ERP_AttributeDefinitionMappingForm</form>
             <execute program="org.efaps.esjp.common.uiform.Create"/>
+            <trigger event="UI_ACCESSCHECK" method="configCheck"
+                name="Loyalty_AttributeDefinitionMyDesk_Menu_Action_CreatePointsType.UI_ACCESSCHECK"
+                program="org.efaps.esjp.admin.access.AccessCheck4UI">
+                <property name="SystemConfig">4eeea69b-d6c7-47ed-b032-864e992ec215</property>
+                <property name="Attribute">org.efaps.loyalty.Points.Activate</property>
+            </trigger>
         </target>
         <property name="Target">modal</property>
         <property name="TargetCreateType">Loyalty_AttributeDefinitionPointsType</property>

@@ -31,6 +31,18 @@
             <sqlcolumn>INTEGER1</sqlcolumn>
         </attribute>
         <attribute>
+            <name>PointsTypeLink</name>
+            <type>LinkWithRanges</type>
+            <typelink>Loyalty_AttributeDefinitionPointsType</typelink>
+            <sqltable>Sales_DocumentExtendSQLTable</sqltable>
+            <sqlcolumn>INTEGER2</sqlcolumn>
+            <trigger event="RANGE_VALUE" name="Loyalty_PaymentPoints.PointsTypeLink.RANGE_VALUE"
+                program="org.efaps.esjp.admin.datamodel.RangesValue">
+                <property name="Value">Value</property>
+                <property name="Type">Loyalty_AttributeDefinitionPointsType</property>
+            </trigger>
+        </attribute>
+        <attribute>
             <name>Status</name>
             <type>Status</type>
             <typelink>Loyalty_PaymentPointsStatus</typelink>
