@@ -21,7 +21,7 @@
     xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd"
 >
     <uuid>7e9b7720-71af-4027-b537-c44894b5fab1</uuid>
-    <file-application>eFapsApp-Promotions</file-application>
+    <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
         <name>Loyalty_PointsTree_Payment</name>

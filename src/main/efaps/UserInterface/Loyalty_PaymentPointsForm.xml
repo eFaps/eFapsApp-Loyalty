@@ -65,7 +65,7 @@
         <field name="contact">
             <property name="SelectAlternateOID">linkto[Contact].oid</property>
             <property name="HRef">${COMMONURL}/MenuTree.jsp</property>
-            <property name="Label">Sales_PaymentCardForm.contact.Label</property>
+            <property name="Label">Loyalty_PaymentPointsForm.contact.Label</property>
             <property name="Select">linkto[Contact].attribute[Name]</property>
             <property name="ModeCreate">EDITABLE</property>
             <property name="ModeEdit">READONLY</property>
