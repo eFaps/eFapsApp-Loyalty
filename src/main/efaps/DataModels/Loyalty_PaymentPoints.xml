@@ -31,6 +31,15 @@
             <sqlcolumn>INTEGER1</sqlcolumn>
         </attribute>
         <attribute>
+            <name>Status</name>
+            <type>Status</type>
+            <typelink>Loyalty_PaymentPointsStatus</typelink>
+            <sqltable>ERP_DocumentAbstractSQLTable</sqltable>
+            <sqlcolumn>STATUS</sqlcolumn>
+            <trigger event="RANGE_VALUE" name="Loyalty_PaymentPoints.Status.RANGE_VALUE"
+                program="org.efaps.esjp.admin.datamodel.StatusValue"/>
+        </attribute>
+        <attribute>
             <name>PointsTypeLink</name>
             <type>LinkWithRanges</type>
             <typelink>Loyalty_AttributeDefinitionPointsType</typelink>
@@ -42,14 +51,29 @@
                 <property name="Type">Loyalty_AttributeDefinitionPointsType</property>
             </trigger>
         </attribute>
+         <attribute>
+            <name>PointsAmount</name>
+            <type>Integer</type>
+            <sqltable>Sales_DocumentExtendSQLTable</sqltable>
+            <sqlcolumn>INTEGER3</sqlcolumn>
+        </attribute>
         <attribute>
-            <name>Status</name>
-            <type>Status</type>
-            <typelink>Loyalty_PaymentPointsStatus</typelink>
-            <sqltable>ERP_DocumentAbstractSQLTable</sqltable>
-            <sqlcolumn>STATUS</sqlcolumn>
-            <trigger event="RANGE_VALUE" name="Loyalty_PaymentPoints.Status.RANGE_VALUE"
-                program="org.efaps.esjp.admin.datamodel.StatusValue"/>
+            <name>Authorization</name>
+            <type>String</type>
+            <sqltable>Sales_DocumentExtendSQLTable</sqltable>
+            <sqlcolumn>STRING2</sqlcolumn>
+        </attribute>
+        <attribute>
+            <name>OperationId</name>
+            <type>String</type>
+            <sqltable>Sales_DocumentExtendSQLTable</sqltable>
+            <sqlcolumn>STRING3</sqlcolumn>
+        </attribute>
+        <attribute>
+            <name>Info</name>
+            <type>String</type>
+            <sqltable>Sales_DocumentExtendSQLTable</sqltable>
+            <sqlcolumn>STRING4</sqlcolumn>
         </attribute>
     </definition>
 </datamodel-type>
