@@ -20,7 +20,7 @@ import java.util.List;
 import org.efaps.admin.program.esjp.EFapsApplication;
 import org.efaps.admin.program.esjp.EFapsUUID;
 import org.efaps.admin.program.esjp.IEsjpListener;
-import org.efaps.esjp.loyalty.dto.PointsBalanceDto;
+import org.efaps.esjp.loyalty.pojo.PointsBalance;
 import org.efaps.util.EFapsException;
 
 @EFapsUUID("743babc7-6a54-4628-af31-1683b37de299")
@@ -29,6 +29,6 @@ public interface IOnQuery
     extends IEsjpListener
 {
 
-    List<PointsBalanceDto> queryBalance4Contact(final String identifier)
+    List<PointsBalance> queryBalance4Contact(final String identifier)
         throws EFapsException;
 }

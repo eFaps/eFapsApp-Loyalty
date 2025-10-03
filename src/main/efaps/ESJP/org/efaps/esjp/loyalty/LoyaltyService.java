@@ -21,8 +21,8 @@ import java.util.List;
 import org.efaps.admin.program.esjp.EFapsApplication;
 import org.efaps.admin.program.esjp.EFapsUUID;
 import org.efaps.admin.program.esjp.Listener;
-import org.efaps.esjp.loyalty.dto.PointsBalanceDto;
 import org.efaps.esjp.loyalty.listener.IOnQuery;
+import org.efaps.esjp.loyalty.pojo.PointsBalance;
 import org.efaps.util.EFapsException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,10 +33,10 @@ public class LoyaltyService
 {
     private static final Logger LOG = LoggerFactory.getLogger(LoyaltyService.class);
 
-    public List<PointsBalanceDto> queryBalance4Contact(final String identifier)
+    public List<PointsBalance> queryBalance4Contact(final String identifier)
         throws EFapsException
     {
-        final var dtos = new ArrayList<PointsBalanceDto>();
+        final var dtos = new ArrayList<PointsBalance>();
         LOG.info("Query Programs for contact with identifier: {}", identifier);
         for (final IOnQuery listener : Listener.get().<IOnQuery>invoke(IOnQuery.class)) {
             dtos.addAll(listener.queryBalance4Contact(identifier));
