@@ -43,4 +43,8 @@ public class LoyaltyService
         }
         return dtos;
     }
+
+    public void accumulatePoints() {
+
+    }
 }

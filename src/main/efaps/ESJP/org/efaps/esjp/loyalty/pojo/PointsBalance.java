@@ -29,6 +29,8 @@ import org.efaps.db.Instance;
 public class PointsBalance
 {
 
+    private String programKey;
+
     private Instance contactInst;
 
     private Integer points;
@@ -38,6 +40,17 @@ public class PointsBalance
     private String equivalentCurrency;
 
     private Map<String, Object> extend;
+
+    public String getProgramKey()
+    {
+        return programKey;
+    }
+
+    public PointsBalance setProgramKey(String programKey)
+    {
+        this.programKey = programKey;
+        return this;
+    }
 
     public Map<String, Object> getExtend()
     {
