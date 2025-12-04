@@ -21,9 +21,15 @@ import java.util.List;
 import org.efaps.admin.program.esjp.EFapsApplication;
 import org.efaps.admin.program.esjp.EFapsUUID;
 import org.efaps.admin.program.esjp.Listener;
+import org.efaps.db.Instance;
+import org.efaps.eql.EQL;
+import org.efaps.esjp.ci.CISales;
+import org.efaps.esjp.db.InstanceUtils;
 import org.efaps.esjp.loyalty.listener.IOnQuery;
+import org.efaps.esjp.loyalty.listener.IOnTransaction;
 import org.efaps.esjp.loyalty.pojo.PointsBalance;
 import org.efaps.util.EFapsException;
+import org.efaps.util.OIDUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,6 +37,7 @@ import org.slf4j.LoggerFactory;
 @EFapsApplication("eFapsApp-Loyalty")
 public class LoyaltyService
 {
+
     private static final Logger LOG = LoggerFactory.getLogger(LoyaltyService.class);
 
     public List<PointsBalance> queryBalance4Contact(final String identifier)
@@ -44,7 +51,29 @@ public class LoyaltyService
         return dtos;
     }
 
-    public void accumulatePoints() {
+    public void gain(final Instance docInstance,
+                     final String loyaltyContactOid)
+        throws EFapsException
+    {
+        if (InstanceUtils.isType(docInstance, CISales.Invoice)
+                        || InstanceUtils.isType(docInstance, CISales.Receipt)) {
 
+            Instance contactInst;
+            if (OIDUtil.isOID(loyaltyContactOid)) {
+                contactInst = Instance.get(loyaltyContactOid);
+            } else {
+                final var eval = EQL.builder().print(docInstance)
+                                .linkto(CISales.DocumentSumAbstract.Contact).instance().as("contactInst")
+                                .evaluate();
+                eval.next();
+                contactInst = eval.get("contactInst");
+            }
+
+            final var programInstance = new Points().evalProgramInstance4Contact(contactInst);
+
+            for (final var listener : Listener.get().<IOnTransaction>invoke(IOnTransaction.class)) {
+                listener.onGain(programInstance, docInstance);
+            }
+        }
     }
 }
