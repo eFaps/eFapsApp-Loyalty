@@ -31,6 +31,7 @@
             <column name="ASSOCID"      not-null="true" type="INTEGER"/>
             <column name="STATUS"       not-null="true" type="INTEGER" />
             <column name="CONTACTID"                    type="INTEGER"/>
+            <column name="IDENTIFIER"                    type="STRING_SHORT" length="64"/>
             <column name="CREATOR"      not-null="true" type="INTEGER"/>
             <column name="CREATED"      not-null="true" type="DATETIME"/>
             <column name="MODIFIER"     not-null="true" type="INTEGER"/>

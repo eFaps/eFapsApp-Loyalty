@@ -28,6 +28,12 @@
             <property name="UIProvider">org.efaps.admin.datamodel.ui.StringUI</property>
             <property name="HRef">TREEMENU</property>
         </field>
+         <field name="identifier">
+            <property name="Attribute">Identifier</property>
+            <property name="Label">Loyalty_ProgramAbstract/Identifier.Label</property>
+            <property name="ModeCreate">EDITABLE</property>
+            <property name="ModeEdit">NONE</property>
+        </field>
         <field name="contactLink">
             <property name="SelectAlternateOID">linkto[ContactLink].oid</property>
             <property name="Select">linkto[ContactLink].attribute[Name]</property>

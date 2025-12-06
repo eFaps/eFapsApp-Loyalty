@@ -28,7 +28,7 @@ import org.efaps.util.EFapsException;
 public abstract class AbstractProgram
 {
 
-    public Instance evalProgramInstance4Contact(final Instance contactInstance)
+    public Instance evalProgramInstance4Contact(final Instance contactInstance, final String identifier)
         throws EFapsException
     {
         Instance ret = null;
@@ -44,6 +44,7 @@ public abstract class AbstractProgram
         if (ret == null && autoCreate()) {
             ret = EQL.builder().insert(getCIType())
                             .set(CILoyalty.ProgramAbstract.ContactLink, contactInstance)
+                            .set(CILoyalty.ProgramAbstract.Identifier, identifier)
                             .set(CILoyalty.ProgramAbstract.StatusAbstract, CILoyalty.ProgramStatus.Active)
                             .execute();
         }

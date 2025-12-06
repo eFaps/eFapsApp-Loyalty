@@ -55,6 +55,7 @@ public class LoyaltyService
                      final String loyaltyContactOid)
         throws EFapsException
     {
+        LOG.info("calculating gained Loyalty for {}, {}", docInstance, loyaltyContactOid);
         if (InstanceUtils.isType(docInstance, CISales.Invoice)
                         || InstanceUtils.isType(docInstance, CISales.Receipt)) {
 
@@ -69,9 +70,10 @@ public class LoyaltyService
                 contactInst = eval.get("contactInst");
             }
 
-            final var programInstance = new Points().evalProgramInstance4Contact(contactInst);
+            final var programInstance = new Points().evalProgramInstance4Contact(contactInst, null);
 
             for (final var listener : Listener.get().<IOnTransaction>invoke(IOnTransaction.class)) {
+                LOG.info("calling gain listener: {}", listener);
                 listener.onGain(programInstance, docInstance);
             }
         }

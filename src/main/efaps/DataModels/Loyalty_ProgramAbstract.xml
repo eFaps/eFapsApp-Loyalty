@@ -68,6 +68,12 @@
             <sqlcolumn>CONTACTID</sqlcolumn>
         </attribute>
         <attribute>
+            <name>Identifier</name>
+            <type>String</type>
+            <sqltable>Loyalty_ProgramSQLTable</sqltable>
+            <sqlcolumn>IDENTIFIER</sqlcolumn>
+        </attribute>
+        <attribute>
             <name>Creator</name>
             <type>CreatorLink</type>
             <sqltable>Loyalty_ProgramSQLTable</sqltable>

@@ -37,6 +37,11 @@
                 event="UI_FIELD_AUTOCOMPLETE" >
             </trigger>
         </field>
+        <field name="identifier">
+            <property name="Attribute">Identifier</property>
+            <property name="ModeCreate">EDITABLE</property>
+            <property name="ModeEdit">NONE</property>
+        </field>
         <field name="status">
             <property name="Attribute">Status</property>
         </field>
