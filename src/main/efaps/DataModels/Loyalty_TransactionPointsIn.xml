@@ -32,7 +32,7 @@
         </attribute>
          <attribute>
             <name>Reference</name>
-            <type>Decimal</type>
+            <type>String</type>
             <sqltable>Loyalty_TransactionSQLTable</sqltable>
             <sqlcolumn>TEXT1</sqlcolumn>
         </attribute>
