@@ -97,5 +97,9 @@
             <sqltable>Loyalty_ProgramSQLTable</sqltable>
             <sqlcolumn>MODIFIED</sqlcolumn>
         </attribute>
+           <index msgPhrase="Contacts_IndexContactMsgPhrase">
+            <field id="identifier"      key="index.Program.Identifier" select="attribute[Identifier]" type="STRING" />
+            <field id="contact"         key="index.Program.Contact" select="linkto[ContactLink].attribute[Name]" type="STRING"/>
+        </index>
     </definition>
 </datamodel-type>
