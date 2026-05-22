@@ -23,7 +23,8 @@
     <definition>
         <version-expression>(version==latest)</version-expression>
         <name>Loyalty_IndexLoyaltyProgramMsgPhrase</name>
-        <label>{0}</label>
-        <argument index="0">attribute[Identifier]</argument>
+        <label>{0}: {1}</label>
+        <argument index="0">type.label</argument>
+        <argument index="1">attribute[Identifier]</argument>
     </definition>
 </common-msgphrase>
