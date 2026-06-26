@@ -20,7 +20,9 @@ import org.efaps.admin.program.esjp.EFapsUUID;
 import org.efaps.ci.CIType;
 import org.efaps.db.Instance;
 import org.efaps.eql.EQL;
+import org.efaps.esjp.ci.CIContacts;
 import org.efaps.esjp.ci.CILoyalty;
+import org.efaps.esjp.db.InstanceUtils;
 import org.efaps.util.EFapsException;
 
 @EFapsUUID("b5ab7757-31cd-4014-ad91-21c05d4923d2")
@@ -28,13 +30,36 @@ import org.efaps.util.EFapsException;
 public abstract class AbstractProgram
 {
 
-    public Instance evalProgramInstance4Contact(final Instance contactInstance, final String identifier)
+    public Instance evalProgramInstance4Contact(final Instance contactInstance,
+                                                final String identifier)
+        throws EFapsException
+    {
+        Instance ret = null;
+        if (InstanceUtils.isKindOf(contactInstance, CIContacts.ContactAbstract)) {
+            final var eval = EQL.builder().print().query(getCIType())
+                            .where()
+                            .attribute(CILoyalty.ProgramAbstract.ContactLink).eq(contactInstance)
+                            .select()
+                            .attribute(CILoyalty.PaymentAbstract.ID)
+                            .evaluate();
+            if (eval.next()) {
+                ret = eval.inst();
+            }
+            if (ret == null && autoCreate()) {
+                ret = createProgramInstance(contactInstance, identifier);
+            }
+        }
+        return ret;
+    }
+
+    public Instance evalProgramInstance4Identifier(final Instance contactInstance,
+                                                   final String identifier)
         throws EFapsException
     {
         Instance ret = null;
         final var eval = EQL.builder().print().query(getCIType())
                         .where()
-                        .attribute(CILoyalty.ProgramAbstract.ContactLink).eq(contactInstance)
+                        .attribute(CILoyalty.ProgramAbstract.Identifier).eq(identifier)
                         .select()
                         .attribute(CILoyalty.PaymentAbstract.ID)
                         .evaluate();
@@ -42,13 +67,20 @@ public abstract class AbstractProgram
             ret = eval.inst();
         }
         if (ret == null && autoCreate()) {
-            ret = EQL.builder().insert(getCIType())
-                            .set(CILoyalty.ProgramAbstract.ContactLink, contactInstance)
-                            .set(CILoyalty.ProgramAbstract.Identifier, identifier)
-                            .set(CILoyalty.ProgramAbstract.StatusAbstract, CILoyalty.ProgramStatus.Active)
-                            .execute();
+            ret = createProgramInstance(contactInstance, identifier);
         }
         return ret;
+    }
+
+    protected Instance createProgramInstance(final Instance contactInstance,
+                                             final String identifier)
+        throws EFapsException
+    {
+        return EQL.builder().insert(getCIType())
+                        .set(CILoyalty.ProgramAbstract.ContactLink, contactInstance)
+                        .set(CILoyalty.ProgramAbstract.Identifier, identifier)
+                        .set(CILoyalty.ProgramAbstract.StatusAbstract, CILoyalty.ProgramStatus.Active)
+                        .execute();
     }
 
     protected boolean autoCreate()

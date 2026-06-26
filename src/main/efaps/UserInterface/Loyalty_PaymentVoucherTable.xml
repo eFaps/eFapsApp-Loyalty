@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+
+    Copyright © 2003 - 2024 The eFaps Team (-)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<ui-table xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
+    <uuid>b4e76e4e-8bed-430a-87f7-6aff46071fa7</uuid>
+    <file-application>eFapsApp-Loyalty</file-application>
+    <definition>
+        <version-expression>(version==latest)</version-expression>
+        <name>Loyalty_PaymentVoucherTable</name>
+        <field name="name">
+            <property name="Attribute">Name</property>
+            <property name="Label">Loyalty_PaymentVoucher/Code.Label</property>
+            <property name="HRef">TREEMENU</property>
+        </field>
+        <field name="code">
+            <property name="Attribute">Code</property>
+            <property name="Label">Loyalty_PaymentVoucher/Code.Label</property>
+        </field>
+        <field name="amount">
+            <property name="Attribute">Amount</property>
+            <property name="Label">Loyalty_PaymentVoucher/Amount.Label</property>
+        </field>
+        <field name="currencyLink">
+            <property name="Select">linkto[CurrencyLink].attribute[Name]</property>
+            <property name="Label">Loyalty_PaymentVoucher/CurrencyLink.Label</property>
+        </field>
+        <field name="status">
+            <property name="Attribute">Status</property>
+            <property name="Label">Loyalty_PaymentVoucher/StatusAbstract.Label</property>
+        </field>
+        <field name="creator">
+            <property name="Select">attribute[Creator]</property>
+            <property name="Label">Loyalty_PaymentVoucher/Creator.Label</property>
+        </field>
+        <field name="created">
+            <property name="Select">attribute[Created]</property>
+            <property name="Label">Loyalty_PaymentVoucher/Created.Label</property>
+        </field>
+    </definition>
+</ui-table>

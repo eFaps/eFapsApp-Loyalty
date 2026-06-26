@@ -54,6 +54,18 @@ public class Loyalty
                     .key(Loyalty.BASE + "Points.AutoCreate")
                     .description("Create points program automatically on first request.");
 
+    @EFapsSysConfAttribute
+    public static final BooleanSysConfAttribute VOUCHER_ACTIVATE = new BooleanSysConfAttribute()
+                    .sysConfUUID(Loyalty.SYSCONFUUID)
+                    .key(Loyalty.BASE + "Voucher.Activate")
+                    .description("Activate Voucher payment and program.");
+
+    @EFapsSysConfAttribute
+    public static final BooleanSysConfAttribute VOUCHER_AUTOCREATE = new BooleanSysConfAttribute()
+                    .sysConfUUID(Loyalty.SYSCONFUUID)
+                    .key(Loyalty.BASE + "Voucher.AutoCreate")
+                    .description("Create Voucher program automatically on first request.");
+
 
     public static SystemConfiguration getSysConfig()
         throws CacheReloadException

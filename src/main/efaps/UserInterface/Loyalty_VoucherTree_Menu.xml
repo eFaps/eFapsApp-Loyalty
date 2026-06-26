@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
 
     Copyright © 2003 - 2024 The eFaps Team (-)
 
@@ -17,21 +18,13 @@
 -->
 <ui-menu xmlns="http://www.efaps.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.efaps.org/xsd http://www.efaps.org/xsd/eFaps_1.0.xsd">
-    <uuid>476037b2-a2ae-4a5f-a5ed-480c29e4cb13</uuid>
+    <uuid>a45564b5-0932-4bed-a2bb-8b10222f5a47</uuid>
     <file-application>eFapsApp-Loyalty</file-application>
     <definition>
         <version-expression>(version==latest)</version-expression>
-        <name>Loyalty_MyDesk</name>
-        <target>
-            <trigger event="UI_ACCESSCHECK" method="configCheck" name="Loyalty_MyDesk.UI_ACCESSCHECK"
-                program="org.efaps.esjp.admin.access.AccessCheck4UI">
-                <property name="SystemConfig">4eeea69b-d6c7-47ed-b032-864e992ec215</property>
-                <property name="Attribute">org.efaps.loyalty.Activate</property>
-            </trigger>
-        </target>
+        <name>Loyalty_VoucherTree_Menu</name>
         <childs>
-            <child>Loyalty_PointsMyDesk</child>
-            <child>Loyalty_VoucherMyDesk</child>
+            <child>Loyalty_VoucherTree_Menu_Action</child>
         </childs>
     </definition>
 </ui-menu>
